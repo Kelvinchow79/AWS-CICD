@@ -10,7 +10,7 @@ phases:
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - aws ecr create-repository --repository-name "${REPO_NAME}" || true
       - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.ap-southeast-1.amazonaws.com/$REPO_NAME
-      - echo ECR repo uri is $REPOSITORY_URI
+      - echo ECR repos uri is $REPOSITORY_URI
   build:
     commands:
       - docker login -u $dockerhub_username -p $dockerhub_password
